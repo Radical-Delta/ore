@@ -15,6 +15,15 @@ pub enum Category {
     Undefined
 }
 
+#[derive(Clone, Copy)]
+pub enum SortType {
+    MostStars,
+    MostDownloads,
+    MostViews,
+    Newest,
+    RecentlyUpdated
+}
+
 impl Category {
     pub fn from_string(name: &str) -> Self {
         match name {
@@ -88,6 +97,60 @@ impl Debug for Category {
 }
 
 impl Display for Category {
+    fn fmt(&self, f: &mut Formatter) -> Result {
+        write!(f, "{}", self.as_string())
+    }
+}
+
+impl SortType {
+    pub fn from_string(name: &str) -> Self {
+        match name {
+            "MostDownloads" => SortType::MostDownloads,
+            "MostViews" => SortType::MostViews,
+            "Newest" => SortType::Newest,
+            "RecentlyUpdated" => SortType::RecentlyUpdated,
+            _ => SortType::MostStars
+        }
+    }
+
+    pub fn from_id(id: &u8) -> Self {
+        match id {
+            &1u8 => SortType::MostDownloads,
+            &2u8 => SortType::MostViews,
+            &3u8 => SortType::Newest,
+            &4u8 => SortType::RecentlyUpdated,
+            _ => SortType::MostStars
+        }
+    }
+
+    pub fn to_id(&self) -> u8 {
+        match *self {
+            SortType::MostStars => 0u8,
+            SortType::MostDownloads => 1u8,
+            SortType::MostViews => 2u8,
+            SortType::Newest => 3u8,
+            SortType::RecentlyUpdated => 4u8
+        }
+    }
+
+    fn as_string(&self) -> String {
+        match *self {
+            SortType::MostStars => "MostStars",
+            SortType::MostDownloads => "MostDownloads",
+            SortType::MostViews => "MostViews",
+            SortType::Newest => "Newest",
+            SortType::RecentlyUpdated => "RecentlyUpdated"
+        }.to_string()
+    }
+}
+
+impl Debug for SortType {
+    fn fmt(&self, f: &mut Formatter) -> Result {
+        write!(f, "SortType {{ id: {}, name: {} }}", self.to_id(), self.as_string())
+    }
+}
+
+impl Display for SortType {
     fn fmt(&self, f: &mut Formatter) -> Result {
         write!(f, "{}", self.as_string())
     }
