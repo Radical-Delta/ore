@@ -1,0 +1,28 @@
+[package]
+authors = [
+    "Hunar Roop Kahlon <hunar.roop@gmail.com>",
+    "Adam Spofford <pieflavor.mc@gmail.com>"
+]
+
+categories = [
+    "development-tools"
+]
+
+description = "ore is a rust library for interacting with Ore"
+
+keywords = [
+    "ore",
+    "sponge",
+    "minecraft",
+    "plugin"
+]
+
+license = "MIT"
+license-file = "LICENSE"
+
+name = "ore"
+readme = "README.md"
+repository = "https://github.com/Radical-Delta/ore"
+version = "0.1.0"
+
+[dependencies]
