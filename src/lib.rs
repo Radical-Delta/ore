@@ -3,4 +3,3 @@ pub mod project;
 
 /// Represents a Ore user.
 pub mod user;
-
