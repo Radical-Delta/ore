@@ -82,18 +82,18 @@ impl Category {
 
     fn as_string(&self) -> String {
         match *self {
-                Category::AdminTools => "AdminTools",
-                Category::Chat => "Chat",
-                Category::DeveloperTools => "DeveloperTools",
-                Category::Economy => "Economy",
-                Category::Gameplay => "Gameplay",
-                Category::Games => "Games",
-                Category::Protection => "Protection",
-                Category::RolePlaying => "RolePlaying",
-                Category::WorldManagement => "WorldManagement",
-                Category::Miscellaneous => "Miscellaneous",
-                _ => "Undefined",
-            }
+            Category::AdminTools => "AdminTools",
+            Category::Chat => "Chat",
+            Category::DeveloperTools => "DeveloperTools",
+            Category::Economy => "Economy",
+            Category::Gameplay => "Gameplay",
+            Category::Games => "Games",
+            Category::Protection => "Protection",
+            Category::RolePlaying => "RolePlaying",
+            Category::WorldManagement => "WorldManagement",
+            Category::Miscellaneous => "Miscellaneous",
+            _ => "Undefined",
+        }
             .to_string()
     }
 }
@@ -149,12 +149,12 @@ impl SortType {
 
     fn as_string(&self) -> String {
         match *self {
-                SortType::MostStars => "MostStars",
-                SortType::MostDownloads => "MostDownloads",
-                SortType::MostViews => "MostViews",
-                SortType::Newest => "Newest",
-                SortType::RecentlyUpdated => "RecentlyUpdated",
-            }
+            SortType::MostStars => "MostStars",
+            SortType::MostDownloads => "MostDownloads",
+            SortType::MostViews => "MostViews",
+            SortType::Newest => "Newest",
+            SortType::RecentlyUpdated => "RecentlyUpdated",
+        }
             .to_string()
     }
 }
